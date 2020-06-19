@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: angular-demo
+  name: angular-demo
+spec:
+  type: LoadBalancer
+  ports:
+    - name: "backend-8080"
+      port: 8080
+      targetPort: "backend-8080"
+  selector:
+    app: angular-demo
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    service: angular-demo
+    deployments: default
+  name: angular-demo
+spec:
+  selector:
+    matchLabels:
+      deployments: default
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        service: angular-demo
+        deployments: default
+    spec:
+      containers:
+        - image: hestek/demo:0.0.1
+          name: angular-demo
+          ports:
+            - name: "backend-8080"
+              containerPort: 8080
+          resources: {}
+      restartPolicy: Always
