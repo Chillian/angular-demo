@@ -1,5 +1,6 @@
 package nl.capgemini.demo;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 @RestController
 public class DemoController {
 
+    @CrossOrigin
     @GetMapping("/stamboom")
     public Stamboom kind() {
         Opa opa1 = new Opa("Opa1");
