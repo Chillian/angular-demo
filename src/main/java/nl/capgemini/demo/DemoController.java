@@ -13,15 +13,15 @@ public class DemoController {
     @CrossOrigin
     @GetMapping("/stamboom")
     public Stamboom kind() {
-        Opa opa1 = new Opa("Opa1");
-        Opa opa2 = new Opa("Opa2");
-        Oma oma1 = new Oma("Oma1");
-        Oma oma2 = new Oma("Oma2");
-        Vader vader = new Vader("vader");
-        Moeder moeder = new Moeder("moeder");
-        Kind kind1 = new Kind("kind1");
-        Kind kind2 = new Kind("kind2");
-        Kind kind3 = new Kind("kind3");
+        Opa opa1 = new Opa("Opa Henk");
+        Opa opa2 = new Opa("Opa Piet");
+        Oma oma1 = new Oma("Oma Nikki");
+        Oma oma2 = new Oma("Oma Paulien");
+        Vader vader = new Vader("Vader Frank");
+        Moeder moeder = new Moeder("Moeder Kim");
+        Kind kind1 = new Kind("Suzanne");
+        Kind kind2 = new Kind("Peter");
+        Kind kind3 = new Kind("Ashley");
 
         ArrayList<Kind> kinderen = new ArrayList();
         ArrayList<Opa> opas = new ArrayList();
